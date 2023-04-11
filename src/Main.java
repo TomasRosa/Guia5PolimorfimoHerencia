@@ -31,7 +31,7 @@ public class Main
         System.out.println("Ingresa tu altura en centimetros. ");
         double altura = scan.nextDouble();
 
-        Persona persona1 = new Persona(nombre,edad,Persona.generarDNI(),sexo,peso,altura);
+        Persona persona1 = new Persona(nombre,edad,sexo,peso,altura);
         Persona persona2 = new Persona(nombre,edad,sexo);
         Persona persona3 = new Persona();
 
@@ -41,87 +41,22 @@ public class Main
         persona3.setPeso(90);
         persona3.setAltura(180);
 
-        int imc1 = persona1.calcularImc();
-        int imc2 = persona2.calcularImc();
-        int imc3 = persona3.calcularImc();
-
         System.out.println("PERSONA 1, CREADA CON ATRIBUTOS X CONSOLA");
         String personaString1 = persona1.toString();
         System.out.println(personaString1);
-
-        if(imc1 == Persona.bajoPeso)
-        {
-            System.out.println("Persona en bajo peso. ");
-        }
-        else if(imc1 == Persona.sobrePeso)
-        {
-            System.out.println("Persona en sobre peso.");
-        }
-        else if(imc1 == Persona.saludable)
-        {
-            System.out.println("Persona saludable.");
-        }
-
-        if(persona1.esMayorDeEdad())
-        {
-            System.out.println("Es mayor de edad.");
-        }
-        else
-        {
-            System.out.println("No es mayor de edad.");
-        }
-
+        persona1.EstadoDeSalud();
+        persona1.esMayorDeEdad();
 
         System.out.printf("PERSONA 2 CREADA CON NOMBRE EDAD Y SEXO, LOS DEMAS POR DEFECTO");
         String persona2String = persona2.toString();
         System.out.println(persona2String);
+        persona2.EstadoDeSalud();
+        persona2.esMayorDeEdad();
 
-        if(imc2 == Persona.bajoPeso)
-        {
-            System.out.println("Persona en bajo peso. ");
-        }
-        else if(imc2 == Persona.sobrePeso)
-        {
-            System.out.println("Persona en sobre peso.");
-        }
-        else if(imc2 == Persona.saludable)
-        {
-            System.out.println("Persona saludable.");
-        }
-
-        if(persona2.esMayorDeEdad())
-        {
-            System.out.println("Es mayor de edad.");
-        }
-        else
-        {
-            System.out.println("No es mayor de edad.");
-        }
-
-        System.out.println("PERSONA 3 CREADA CON CONSTRUCTOR VACIO, PERO SETEO LO MISMO QUE PERSONA 1.");
+        System.out.println("PERSONA 3 CREADA CON CONSTRUCTOR VACIO, PERO SETEO.");
         String persona3String = persona3.toString();
         System.out.println(persona3String);
-        if(imc3 == Persona.bajoPeso)
-        {
-            System.out.println("Persona en bajo peso. ");
-        }
-        else if(imc3 == Persona.sobrePeso)
-        {
-            System.out.println("Persona en sobre peso.");
-        }
-        else if(imc3 == Persona.saludable)
-        {
-            System.out.println("Persona saludable.");
-        }
-
-
-        if(persona3.esMayorDeEdad())
-        {
-            System.out.println("Es mayor de edad.");
-        }
-        else
-        {
-            System.out.println("No es mayor de edad.");
-        }
+        persona3.EstadoDeSalud();
+        persona3.esMayorDeEdad();
     }
 }

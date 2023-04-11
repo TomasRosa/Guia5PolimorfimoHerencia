@@ -36,27 +36,26 @@ public class Persona
 
     public Persona ()
     {
-
+        this.dni = generarDNI();
     }
     public Persona (String nombre, int edad, char sexo)
     {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
+        this.dni = generarDNI();
     }
-    public Persona (String nombre, int edad, long dni, char sexo, double peso, double altura)
+    public Persona (String nombre, int edad,char sexo, double peso, double altura)
     {
         this.nombre = nombre;
         this.edad = edad;
-        this.dni = dni;
+        this.dni = generarDNI();
         this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
     }
     public int calcularImc ()
     {
-        int valorARetornar = 9999;
-
         double formula = 0;
         double alturaEnMetros = this.altura/100;
 
@@ -79,10 +78,12 @@ public class Persona
     {
         if(this.edad > 17)
         {
+            System.out.println("Es mayor de edad.");
             return true;
         }
         else
         {
+            System.out.println("Es menor de edad.");
             return false;
         }
     }
@@ -102,8 +103,22 @@ public class Persona
     public static int generarDNI()
     {
         Random rand = new Random();
-        int numero = rand.nextInt(100000000); // Genera un número de 8 dígitos
-        int digitoVerificador = numero % 23; // Calcula el dígito verificador
-        return numero * 10 + digitoVerificador; // Agrega el dígito verificador al final
+        int numero = rand.nextInt(90000000) + 10000000; // Genera un número de 8 dígitos
+        return numero;
+    }
+    public void EstadoDeSalud ()
+    {
+        if(calcularImc() == saludable)
+        {
+            System.out.println("Persona saludable.");
+        }
+        else if (calcularImc() == sobrePeso)
+        {
+            System.out.println("Persona con sobrepeso.");
+        }
+        else if(calcularImc() == bajoPeso)
+        {
+            System.out.println("Persona en bajo peos.");
+        }
     }
 }
