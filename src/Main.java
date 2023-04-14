@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main
 {
@@ -13,6 +14,11 @@ public class Main
             case 1:
             {
                 ejercicio1(scan);
+                break;
+            }
+            case 2:
+            {
+                ejercicio2(scan);
             }
         }
 
@@ -58,5 +64,26 @@ public class Main
         System.out.println(persona3String);
         persona3.EstadoDeSalud();
         persona3.esMayorDeEdad();
+    }
+    public static void ejercicio2(Scanner scan)
+    {
+        System.out.println("Ingresa el tamaño que quieres que tenga el arreglo. ");
+        int dimension = scan.nextInt();
+        int validos = 0;
+        System.out.println("Ingresa la longitud que quieres que tengan las contraseñas. ");
+        int longitud = scan.nextInt();
+
+        Password[] arregloContraseñas = new Password[dimension];
+        Boolean[] arregloBooleanos= new Boolean[dimension];
+
+        for(int i = 0; i < arregloContraseñas.length; i++)
+        {
+            Password contraseña = new Password(longitud);
+            arregloContraseñas[i] = contraseña;
+            validos++;
+
+            arregloBooleanos[i] = arregloContraseñas[i].esFuerte();
+            System.out.println("Contraseña: " + arregloContraseñas[i].getContraseña() + "Es fuerte? " + arregloBooleanos[i]);
+        }
     }
 }
