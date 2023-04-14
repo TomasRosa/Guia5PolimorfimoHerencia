@@ -7,6 +7,12 @@ public class Lavadora extends Electrodomesticos
     {
         super();
     }
+
+    public int getCarga()
+    {
+        return carga;
+    }
+
     public Lavadora (double precio, double peso)
     {
         super(precio,peso);
@@ -15,5 +21,15 @@ public class Lavadora extends Electrodomesticos
     {
         super(precio,color,consumo,peso);
         this.carga = carga;
+    }
+
+    @Override
+    public void precioFinal()
+    {
+        super.precioFinal();
+        if(this.carga > 30)
+        {
+            setPrecio(getPrecio()+50);
+        }
     }
 }

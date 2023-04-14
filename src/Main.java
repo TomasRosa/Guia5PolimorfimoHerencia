@@ -19,6 +19,11 @@ public class Main
             case 2:
             {
                 ejercicio2(scan);
+                break;
+            }
+            case 3:
+            {
+
             }
         }
 
@@ -69,7 +74,6 @@ public class Main
     {
         System.out.println("Ingresa el tamaño que quieres que tenga el arreglo. ");
         int dimension = scan.nextInt();
-        int validos = 0;
         System.out.println("Ingresa la longitud que quieres que tengan las contraseñas. ");
         int longitud = scan.nextInt();
 
@@ -80,7 +84,6 @@ public class Main
         {
             Password contraseña = new Password(longitud);
             arregloContraseñas[i] = contraseña;
-            validos++;
 
             arregloBooleanos[i] = arregloContraseñas[i].esFuerte();
             System.out.println("Contraseña: " + arregloContraseñas[i].getContraseña() + "Es fuerte? " + arregloBooleanos[i]);

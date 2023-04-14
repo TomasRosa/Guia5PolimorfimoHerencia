@@ -32,6 +32,10 @@ public class Electrodomesticos
         return precio;
     }
 
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public String getColor()
     {
         return color;
