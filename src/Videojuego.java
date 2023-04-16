@@ -60,7 +60,7 @@ public class Videojuego extends Contenido
             {
                 aRetornar = videojuegos.get(i);
             }
-        }
+        }///s
         return aRetornar;
     }
     public int contarEntregadoVideoJuego (ArrayList<Videojuego> videoJuego)
