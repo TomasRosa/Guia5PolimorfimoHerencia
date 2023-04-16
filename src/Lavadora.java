@@ -1,6 +1,6 @@
 public class Lavadora extends Electrodomesticos
 {
-    public final int cargaConst = 5;
+    public final int cargaConst = 35;
     private int carga = cargaConst;
 
     public Lavadora()
